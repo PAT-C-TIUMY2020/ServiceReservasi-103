@@ -11,7 +11,7 @@ namespace ServiceReservasi
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class Service1 : IService1
     {
-        string constring = "Data Source=DESKTOP-D6FVKS8;Initial Catalog=WCFReservasi; Presist Security Info=True; User ID=sa; Password=123";
+        string constring = "Data Source=DESKTOP-D6FVKS8;Initial Catalog=WCFReservasi; Persist Security Info=True; User ID=sa; Password=123";
         SqlConnection connection;
         SqlCommand com; //untuk mengkoneksikan database ke visual studio
 
@@ -89,7 +89,7 @@ namespace ServiceReservasi
             string a = "gagal";
             try
             {
-                string sql = "insert into dbp.Pemesanan values ('"+IDPemesanan+"','"+NamaCustomer+"','"+NoTelepon+"','"+JumlahPemesanan+"','"+IDLokasi+"')";
+                string sql = "insert into dbp.Pemesanan values ('"+IDPemesanan+"','"+NamaCustomer+"','"+NoTelepon+"',"+JumlahPemesanan+",'"+IDLokasi+"')";
                 connection = new SqlConnection(constring);
                 com = new SqlCommand(sql, connection);
                 connection.Open();
